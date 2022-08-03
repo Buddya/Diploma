@@ -1,0 +1,22 @@
+<databaseChangeLog>
+    <changeSet author="Buddya" id="1">
+        <createTable tableName="FILES">
+            <column name="file_name" type="VARCHAR"/>
+            <column name="file_content" type="BYTEA"/>
+        </createTable>
+        <addPrimaryKey columnNames="file_name" tableName="FILES"/>
+        <addNotNullConstraint tableName="FILES" columnName="file_content"/>
+
+        <createTable tableName="USERS">
+            <column name="login" type="VARCHAR"/>
+            <column name="password" type="VARCHAR"/>
+        </createTable>
+        <addPrimaryKey columnNames="login" tableName="USERS"/>
+        <addNotNullConstraint tableName="USERS" columnName="password"/>
+
+        <createTable tableName="TOKENS">
+            <column name="token" type="VARCHAR"/>
+        </createTable>
+        <addPrimaryKey columnNames="token" tableName="TOKENS"/>
+    </changeSet>
+</databaseChangeLog>
