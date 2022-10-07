@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface FileRepository extends CrudRepository<File, String> {
-    @Query(value = "SELECT * FROM FILES LIMIT :limit", nativeQuery = true)
+    @Query(value = "SELECT * FROM files LIMIT :limit", nativeQuery = true)
     List<File> getFiles(int limit);
 }
